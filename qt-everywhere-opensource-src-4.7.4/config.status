@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ "$#" -gt 0 ]; then
+  /Users/ssangkong/NVRAM_KWU/qt-everywhere-opensource-src-4.7.4/configure -opensource -confirm-license "$@"
+else
+  /Users/ssangkong/NVRAM_KWU/qt-everywhere-opensource-src-4.7.4/configure -opensource -confirm-license
+fi
