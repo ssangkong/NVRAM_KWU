@@ -294,7 +294,7 @@ void WebView::loadFinished()
 	printf("%lld - after Step 1\n", duration);
 
 // SSLAB : Timestamp. endpoint of the page loading.
-    QDateTime currentTime = QDateTime::currentDateTime();
+    currentTime = QDateTime::currentDateTime();
     qint64 endTime = currentTime.currentMSecsSinceEpoch();
     PageLoadTime = endTime - currentPageLoadStartTime;
     qWarning("SSLAB : Finish loading : %lld ms, %s \n",
@@ -393,7 +393,6 @@ void WebView::loadUrl(const QUrl &url)
     QDateTime currentTime = QDateTime::currentDateTime();
     qint64 startTime = currentTime.currentMSecsSinceEpoch();
     currentPageLoadStartTime = startTime;
-    char buff[4096] ={0,};
     qWarning("SSLAB : Start loading : %s (%lld ms)\n",
         url.toString().toAscii().data(), startTime);
     

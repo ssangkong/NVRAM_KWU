@@ -148,17 +148,6 @@ BrowserMainWindow::BrowserMainWindow(QWidget *parent, Qt::WindowFlags flags)
     slotUpdateWindowTitle();
     loadDefaultState();
     m_tabWidget->newTab();
-
-
-//SSLAB
-  QPalette* palette = new QPalette();
-  palette->setColor(QPalette::Window, Qt::red);
-  ((QMainWindow*)this)->setPalette(*palette);
-
-
-    int size = m_tabWidget->lineEditStack()->sizeHint().height();
-    m_navigationBar->setIconSize(QSize(size, size));
-
 }
 
 BrowserMainWindow::~BrowserMainWindow()
@@ -906,12 +895,6 @@ void BrowserMainWindow::slotLoadProgress(int progress)
         m_stopReload->setIcon(m_reloadIcon);
         connect(m_stopReload, SIGNAL(triggered()), m_reload, SLOT(trigger()));
         m_stopReload->setToolTip(tr("Reload the current page"));
-
-// SSLAB
-  QPalette* palette = new QPalette();
-  palette->setColor(QPalette::Window, Qt::green);
-  ((QMainWindow*)this)->setPalette(*palette);
-
     }
 }
 
